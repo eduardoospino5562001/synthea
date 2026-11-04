@@ -14,7 +14,8 @@ concurrency:
   cancel-in-progress: true
 
 env:
-  SQ_SHA: '28d49c2efc30deb0e60dc35bcb6d0b8fa542e0e5'
+  TZ: UTC
+  SQ_SHA: '0cb64e1ce1363bfee7ea20ae970a6796349cf12d'
   SEED: '1'
   POPULATION: '1000'
   REFERENCE_DATE: '20260101'
@@ -78,7 +79,7 @@ jobs:
           test "$compare_path" = "$RUNNER_TEMP/sq-venv/bin/synthea-compare"
           compare_version="$(synthea-compare --version)"
           printf 'synthea-compare version: %s\n' "$compare_version"
-          test "$compare_version" = 'synthea-compare (synthea-quality 0.14.2)'
+          test "$compare_version" = 'synthea-compare (synthea-quality 0.14.4)'
 
       - name: Generate and compare matching populations
         run: >-
