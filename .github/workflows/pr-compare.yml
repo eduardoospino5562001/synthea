@@ -4,6 +4,7 @@ on:
   pull_request:
     branches:
       - master
+      - demo/pr-compare
 
 permissions:
   contents: read
@@ -15,7 +16,7 @@ concurrency:
 
 env:
   TZ: UTC
-  SQ_SHA: '0cb64e1ce1363bfee7ea20ae970a6796349cf12d'
+  SQ_SHA: '6624ad1ee9caa203aaad92d11ae0a5e6dadfb901'
   SEED: '1'
   POPULATION: '1000'
   REFERENCE_DATE: '20260101'
@@ -79,7 +80,7 @@ jobs:
           test "$compare_path" = "$RUNNER_TEMP/sq-venv/bin/synthea-compare"
           compare_version="$(synthea-compare --version)"
           printf 'synthea-compare version: %s\n' "$compare_version"
-          test "$compare_version" = 'synthea-compare (synthea-quality 0.14.4)'
+          test "$compare_version" = 'synthea-compare (synthea-quality 0.15.0)'
 
       - name: Generate and compare matching populations
         run: >-
