@@ -303,11 +303,11 @@
       "distributed_transition": [
         {
           "transition": "Emergency_Encounter",
-          "distribution": 0.7999999999999999
+          "distribution": 0.1
         },
         {
           "transition": "Pre-Hospital Death",
-          "distribution": 0.2
+          "distribution": 0.9
         }
       ]
     },
